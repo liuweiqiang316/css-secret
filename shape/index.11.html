@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>平行四边形</title>
+    <link rel="stylesheet" href="../assets/normalise.css">
+</head>
+<body>
+    <div>平行四边形_1</div>
+    <div class='rhombus' >
+        <img src="../assets/avatar.jpg" alt="avatar">
+    </div>
+    <div>平行四边形_2</div>
+    <img class='img' src="../assets/avatar.jpg" alt="avatar">
+</body>
+</html>
+<style>
+    .rhombus {
+        width: 100px;
+        height: 100px;
+        transform: rotate(45deg);
+        overflow: hidden;
+        margin: 25px;
+    }
+
+    .rhombus > img {
+        max-width: 100%;
+        transform: rotate(-45deg) scale(1.42);
+    }
+
+    .img {
+        width: 100px;
+        /* 
+        clip-path的polygon的参数含义:表示裁切后的多边形的点对应原矩形的基点的横纵距离,默认基点为左上角.
+         */
+        clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+    }
+
+
+</style>
