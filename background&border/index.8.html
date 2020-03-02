@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>连续的图像边框</title>
+    <link rel="stylesheet" href="../assets/normalise.css">
+</head>
+<body>
+    <div>图片当边框</div>
+    <div class='common continuation_1' ></div>
+    <div>信封</div>
+    <div class='common envelope' ></div>
+    <div>蚂蚁移动边框</div>
+    <div class='common ant' ></div>
+    <div>border-image</div>
+    <div class='common border-image' >这里是文本</div>
+</body>
+</html>
+<style>
+    .common {
+        height: 120px;
+        width: 100px;
+    }
+
+    .continuation_1 {
+        background: linear-gradient(#fff, #fff), url('./static/10076822,800,450.jpg');
+        border: 1em solid transparent;
+        padding: 1em;
+        background-size: cover;
+        background-clip: padding-box, border-box;
+        background-origin: border-box;
+    }
+
+    .envelope {
+        padding: 10px;
+        background-image: linear-gradient(#fff, #fff),repeating-linear-gradient(-45deg, red, red 10px, #fff 0, #fff 20px, blue 0, blue 30px);
+        background-clip: content-box, border-box;
+    }
+    
+    @keyframes ants { to { background-position: 100% } }
+    
+    .ant {
+        padding: 1em;
+        border: 1px solid transparent;
+        background-image: linear-gradient(#fff, #fff),repeating-linear-gradient(-45deg, red, red 25%, #fff 0, #fff 50%);
+        background-clip: padding-box, border-box;
+        background-size: 0.6em 0.6em;
+        animation: ants 12s linear infinite;
+    }
+
+    /* .ant {
+        padding: 1em;
+        border: 1px solid transparent;
+        background: linear-gradient(white,white) padding-box, repeating-linear-gradient(-45deg, black 0, black 25%, white 0, white 50%) 0 / .6em .6em;
+        animation: ants 12s linear infinite;
+    } */
+
+    .border-image {
+        border-top: 0.2em solid transparent;
+        border-image: 100% 0 0 linear-gradient(90deg, red 3em, transparent 0);
+        padding-top: 1em;
+    }
+
+</style>

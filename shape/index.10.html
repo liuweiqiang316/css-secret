@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>平行四边形</title>
+    <link rel="stylesheet" href="../assets/normalise.css">
+</head>
+<body>
+    <div>平行四边形</div>
+    <div class='common parallelogram' >123456</div>
+</body>
+</html>
+<style>
+    .common {
+        width: 200px;
+        height: 100px;
+    }
+
+    .parallelogram {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+    }
+
+    .parallelogram::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        transform: skew(45deg);
+        background: #58a;
+    }
+</style>

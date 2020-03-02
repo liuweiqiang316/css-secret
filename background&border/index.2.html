@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>多重边框</title>
+    <link rel="stylesheet" href="../assets/normalise.css">
+  </head>
+  <body>
+    <div>box-shadow方案_1</div>
+    <div class="common1">
+      <div class="common2" id="box-shadow-son-1"></div>
+    </div>
+    <div>box-shadow方案_2</div>
+    <div class="common1">
+      <div class="common2" id="box-shadow-son-2"></div>
+    </div>
+    <div>outline方案_1</div>
+    <div class="common1">
+      <div class="common2" id="outline-son-1"></div>
+    </div>
+    <div>outline方案_2</div>
+    <div class="common1">
+      <div class="common2" id="outline-son-2"></div>
+    </div>
+    <div>outline方案_3</div>
+    <div class="common1">
+      <div class="common2" id="outline-son-3"></div>
+    </div>
+  </body>
+</html>
+<style>
+  .common1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .common2 {
+    height: 100px;
+    width: 100px;
+    background: yellowgreen;
+  }
+  #box-shadow-son-1 {
+    box-shadow: 0 0 0 5px red, 0 0 0 10px blue, 0 0 0 15px gold;
+    margin: 15px;
+  }
+  #box-shadow-son-2 {
+    box-shadow: 0 0 0 5px red, 0 0 0 10px blue, 0 0 0 15px gold inset;
+    margin: 15px;
+  }
+  #outline-son-1 {
+    border: 10px solid #655;
+    outline: 5px solid deeppink;
+  }
+  #outline-son-2 {
+    border: 10px solid #655;
+    outline: 1px dashed deeppink;
+    outline-offset: -5px;
+  }
+  #outline-son-3 {
+    outline: 2px solid deeppink;
+    border-radius: 15px;
+  }
+</style>

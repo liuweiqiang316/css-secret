@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伪随机背景</title>
+    <link rel="stylesheet" href="../assets/normalise.css">
+</head>
+<body>
+    <div>随机背景</div>
+    <div class='common random' ></div>
+</body>
+</html>
+<style>
+    /* 
+    这里面的规律是：#fb3的宽度为10px，每隔80px出现一次；
+    #ab4宽度为20px，每隔60px出现一次；
+    #655宽度为20px，每隔40px出现一次。
+    （但它有时候比较苦逼，就是该当它出现的时候有可能会被#fb3和#ab4覆盖一部分或全部，
+    所以这时候你是看不到它的）
+    同时，根据linear-gradient的顺序来排他们显示的优先级。
+     */
+    .common {
+        height: 120px;
+        width: 100%;
+    }
+
+    .random {
+        background: hsl(20, 10%, 90%);
+        background-image: linear-gradient(90deg, red 10px, transparent 0),
+                            linear-gradient(90deg, yellow 20px, transparent 0),
+                            linear-gradient(90deg, blue, 20px, transparent 0);
+        /* background-image: linear-gradient(90deg, #fb3 10px, transparent 0),
+                            linear-gradient(90deg, #ab4 20px, transparent 0),
+                            linear-gradient(90deg, #655, 20px, transparent 0); */
+        /* background-size: 80px 100%, 60px 100%, 40px 100%; */
+        background-size: 83px 100%, 61px 100%, 41px 100%;
+    }
+
+</style>

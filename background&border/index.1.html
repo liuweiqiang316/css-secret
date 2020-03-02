@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>半透明边框</title>
+    <link rel="stylesheet" href="../assets/normalise.css">
+  </head>
+  <body>
+    <div>css揭秘,这是一个白色背景的div</div>
+  </body>
+</html>
+<style>
+  body {
+    background: url("../assets/10076822,800,450.jpg");
+  }
+  div {
+    color: #fff;
+    /* background-image: url('../assets/10076822,800,450.jpg'); */
+    background: #ffffff;
+    border: 10px solid hsla(0, 0%, 100%, 0.5);
+    /* background-clip: border-box; */
+    background-clip: padding-box;
+    /* background-clip: content-box; */
+    /* border: 10px dashed red; */
+    padding: 10px;
+    height: 100px;
+    widows: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  /* border-clip, 设置元素的背景(背景图片或颜色)是否延伸到边框下面.
+        border-box(默认值),背景延伸至边框外沿(但是在边框下面);
+        padding-box,背景延伸至内边距(padding)外沿.不会绘制到边框处;
+        context-box,背景被裁剪至内容区(content box)外沿.
+        text(实验),背景被裁剪成文字的前景色.
+        参考链接: https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-clip
+     */
+</style>

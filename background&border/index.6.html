@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>复杂背景图案</title>
+    <link rel="stylesheet" href="../assets/normalise.css">
+</head>
+<body>
+    <div>网格一</div>
+    <div class='common grid_1' ></div>
+    <div>网格二</div>
+    <div class='common grid_2' ></div>
+    <div>网格三</div>
+    <div class='common grid_3' ></div>
+    <div>波点一</div>
+    <div class='common dot_1' ></div>
+    <div>波点二</div>
+    <div class='common dot_2' ></div>
+    <div>棋盘一</div>
+    <div class='common chessBoard_1' ></div>
+</body>
+</html>
+<style>
+    .common {
+        width: 200px;
+        height: 120px;
+    }
+    .grid_1 {
+        background-image: linear-gradient(rgba(0, 128, 0, 0.5) 50%, transparent 0),linear-gradient(90deg, rgba(0, 128, 0, 0.5) 50%, transparent 0);
+        background-size: 30px 30px;
+    }
+    .grid_2 {
+        background: #58a;
+        background-image: linear-gradient(#fff 1px, transparent 0),linear-gradient(90deg, #fff 1px, transparent 0);
+        background-size: 30px 30px;
+    }
+    .grid_3 {
+        background: #58a;
+        background-image: linear-gradient(#fff 1px, transparent 0),
+                            linear-gradient(90deg, #fff 1px, transparent 0),
+                            linear-gradient(#fff 2px, transparent 0),
+                            linear-gradient(90deg, #fff 2px, transparent 0);
+        background-size: 15px 15px, 
+                            15px 15px,
+                            75px 75px,
+                            75px 75px;
+    }
+    .dot_1 {
+        background-image: radial-gradient(#000 30%, transparent 0);
+        background-size: 30px 30px;
+    }
+    .dot_2 {
+        background-image: radial-gradient(#000 30%, transparent 0), radial-gradient(#000 30%, transparent 0);
+        background-size: 30px 30px;
+        background-position: 0 0, 15px 15px;
+    }
+    .chessBoard_1 {
+        background: #eee;
+        background-image: linear-gradient(45deg, #bbb 25%, transparent 0);
+        background-size: 30px 30px;
+    }
+</style>

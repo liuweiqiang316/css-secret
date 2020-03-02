@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>条纹背景</title>
+    <link rel="stylesheet" href="../assets/normalise.css">
+</head>
+<body>
+    <div>水平等宽</div>
+    <div class='common horizon_1' ></div>
+    <div>水平不等宽</div>
+    <div class='common horizon_2' ></div>
+    <div>水平三色</div>
+    <div class='common horizon_3' ></div>
+    <div>垂直等宽</div>
+    <div class='common vertical_1' ></div>
+    <div>垂直不等宽</div>
+    <div class='common vertical_2' ></div>
+    <div>垂直三色</div>
+    <div class='common vertical_3' ></div>
+    <div>垂直四色</div>
+    <div class='common vertical_4' ></div>
+    <div>斜条纹</div>
+    <div class='common oblique_1' ></div>
+    <div>斜条纹等宽30°</div>
+    <div class='common oblique_2' ></div>
+    <div>斜条纹不等宽30°</div>
+    <div class='common oblique_3' ></div>
+    <div>斜条纹等宽30°三色</div>
+    <div class='common oblique_4' ></div>
+    <div>灵活的同色系条纹</div>
+    <div class='common oblique_5' ></div>
+</body>
+</html>
+<style>
+    /* 
+        以下规范可依解释linear-gradient的第二个颜色后的数字为0以及
+        repeating-linear-gradient的某些颜色的位置值为0
+        如果某个色标的位置值比整个列表中在它之前的色标值的位置值都要小,
+        则该色标的位置值会被设置为它前面所有色标位置值的最大值
+     */
+    .common{
+        height: 120px;
+        width: 100px;
+    }
+    .horizon_1{
+        /* 以下两种写法等价 */
+        /* background: linear-gradient(red 50%, blue 50%); */
+        background: linear-gradient(red 50%, blue 0);
+        background-size: 100% 30px;
+    }
+    .horizon_2{
+        background: linear-gradient(red 30%, blue 0);
+        background-size: 100% 30px;
+    }
+    .horizon_3{
+        background: linear-gradient(red 33.3%, blue 0, blue 66.6%, gold 0);
+        background-size: 100% 30px;
+    }
+    .vertical_1{
+        /* 以下两种写法等价 */
+        /* background: linear-gradient(to right, red 33.3%, blue 0); */
+        background: linear-gradient(90deg, red 50%, blue 0);
+        background-size: 30px 100%;
+    }
+    .vertical_2{
+        background: linear-gradient(90deg, red 30%, blue 0);
+        background-size: 30px 100%;
+    }
+    .vertical_3{
+        background: linear-gradient(90deg, red 30%, blue 0, blue 60%, gold 0);
+        background-size: 30px 100%;
+    }
+    .vertical_4{
+        background: linear-gradient(90deg, red 30%, blue 0, blue 60%, gold 0, gold 80%, grey 0);
+        background-size: 30px 100%;
+    }
+    .oblique_1{
+        background: linear-gradient(45deg, red 25%, blue 0, blue 50%, red 0, red 75%, blue 0);
+        background-size: 40px 40px;
+    }
+    .oblique_2{
+        /* 下面表示:red从0开始10px渐变到red(故前10px款都是red),然后从10px(第一个blue为0,参照上面注释,取前面最大值10px)到20px,由blue渐变到blue,所以10px到20px都是blue */
+        background: repeating-linear-gradient(30deg, red, red 10px, blue 0, blue 20px );
+    }
+    .oblique_3{
+        background: repeating-linear-gradient(30deg, red, red 10px, blue 0, blue 30px );
+    }
+    .oblique_4{
+        background: repeating-linear-gradient(30deg, red, red 10px, blue 0, blue 20px, gold 0, gold 30px );
+    }
+    .oblique_5{
+        background: #58a;
+        background-image: repeating-linear-gradient(30deg, hsla(0, 0%, 100%, 0.1), hsla(0, 0%, 100%, 0.1) 10px, transparent 0, transparent 20px);
+    }
+</style>

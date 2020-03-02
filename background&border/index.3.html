@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>灵活的背景定位</title>
+    <link rel="stylesheet" href="../assets/normalise.css">
+</head>
+<body>
+    <div>background-position的扩展方案</div>
+    <div class='common background-position' ></div>
+    <div>background-position的扩展方案-兼容</div>
+    <div class='common background-position-compatible' ></div>
+    <div>background-origin的方案</div>
+    <div class='common background-origin' ></div>
+    <div>calc()方案</div>
+    <div class='common calc' ></div>
+</div>
+</html>
+<style>
+    .common {
+        width: 100px;
+        height: 100px;
+        background: url('../assets/icons8-git-48.png') no-repeat #58a ;
+    }
+    .background-position {
+        background-position: right 10px bottom 5px;
+    }
+    .background-position-compatible {
+        background: url('../assets/icons8-git-48.png') no-repeat right bottom #58a ;
+    }
+    .background-origin {
+        background-origin: content-box;
+        background-position: right bottom;
+        padding: 0 10px 5px 0;
+    }
+    .calc{
+        background-position: calc(100% - 10px) calc(100% - 5px);
+    }
+</style>

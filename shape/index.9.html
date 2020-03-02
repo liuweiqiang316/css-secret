@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自适应的椭圆</title>
+    <link rel="stylesheet" href="../assets/normalise.css">
+</head>
+<body>
+    <div>椭圆</div>
+    <div class='common oval' ></div>
+    <div>半椭圆_1</div>
+    <div class='common half_oval_1' ></div>
+    <div>半椭圆_2</div>
+    <div class='common half_oval_2' ></div>
+    <div>四分之一椭圆</div>
+    <div class='common quarter_oval' ></div>
+</body>
+</html>
+<style>
+    .common {
+        width: 200px;
+        height: 100px;
+        background: yellowgreen;
+    }
+
+    .oval {
+        /* border-radius: 100px / 50px; */
+        border-radius: 50%;
+    }
+
+    .half_oval_1 {
+        border-radius: 50% / 100% 100% 0 0;
+        /* border-radius: 50% 50% 0 0 / 100% 100% 0 0; */
+    }
+    .half_oval_2 {
+        border-radius: 100% 0 0 100% / 50% 0 0 50%;
+    }
+    .quarter_oval {
+        border-radius: 100%  0 0 0 / 100% 0 0 0;
+    }
+
+
+</style>
