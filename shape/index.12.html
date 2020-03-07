@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>切角效果</title>
+    <link rel="stylesheet" href="../assets/normalise.css">
+</head>
+<body>
+    <div>利用渐变实现切角_1</div>
+    <div class='common gradient_1' ></div>
+    <div>利用渐变实现切角_2</div>
+    <div class='common gradient_2' ></div>
+    <div>利用渐变实现切角_3</div>
+    <div class='common gradient_3' ></div>
+</body>
+</html>
+<style>
+    .common {
+        width: 200px;
+        height: 100px;
+    }
+    
+    .gradient_1 {
+        background: linear-gradient(-45deg, transparent 15px, gold 0);
+    }
+    .gradient_2 {
+        background: green;
+        background: linear-gradient(-45deg, transparent 15px, green 0) right,linear-gradient(45deg, transparent 15px, green 0) left;
+        background-size: 50% 100%;
+        background-repeat: no-repeat;
+    }
+    .gradient_3 {
+        background: green;
+        background: linear-gradient(-45deg, transparent 15px, green 0) bottom right,linear-gradient(45deg, transparent 15px, green 0) bottom left,
+                    linear-gradient(135deg, transparent 15px, green 0) top left, linear-gradient(225deg, transparent 15px, green 0) top right;
+        background-size: 50% 50%;
+        background-repeat: no-repeat;
+    }
+</style>
